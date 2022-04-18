@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <button class="btn">点击</button>
+</head>
+<body>
+<script>
+    var btn=document.querySelector(".btn")
+    function rand(m,n){
+        return Math.ceil(Math.random() * (n - m + 1) + m - 1);
+    }
+    btn.onclick=()=>{
+        new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                let n = rand(1, 100);
+                if (n > 60) {
+                    resolve(n);
+                }else {
+                    reject(n);
+                }
+            },1000)
+        }).then((value)=>{
+            alert("成功" + value);
+        },(reason)=>{
+            alert('再接再厉 ' + reason);
+        })
+    }
+</script>
+</body>
+</html>
