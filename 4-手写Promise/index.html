@@ -7,13 +7,16 @@
 <body>
 <script src="./Promise.js"></script>
 <script>
-     new Promise((resolve, reject) => {
-         resolve("OK");
-     }).then(value => {
+   const p= new Promise((resolve, reject) => {
+        // resolve("OK");
+         reject("err")
+     })
+       p.then(value => {
          console.log(value);
      },reason => {
          console.log(reason);
      })
+     console.log(p);
 </script>
 </body>
 </html>

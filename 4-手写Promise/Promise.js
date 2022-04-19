@@ -9,10 +9,14 @@ function Promise(executor) {
         //1. 修改对象的状态 (promiseState)
         self.PromiseState='fulfilled'  //resolve
         //2. 设置对象结果值 (promiseResult)
-        self.PromiseState=data
+        self.PromiseResult=data
     }
     //rejcet函数
     function reject(data) {
+        //1. 修改对象的状态 (promiseState)
+        self.PromiseState='reject'
+        //2. 设置对象结果值 (promiseResult)
+        self.PromiseResult=data
     }
 
     //同步调用执行器器函数
