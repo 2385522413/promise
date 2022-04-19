@@ -8,8 +8,9 @@
 <script src="./Promise.js"></script>
 <script>
    const p= new Promise((resolve, reject) => {
-        // resolve("OK");
+         resolve("OK");
          reject("err")
+       //throw "错误了"
      })
        p.then(value => {
          console.log(value);
