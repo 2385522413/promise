@@ -7,6 +7,61 @@
 <body>
 <script src="./Promise.js"></script>
 <script>
+    let p1=new Promise((resolve,reject)=>{
+            resolve("p1 success")
+        console.log("111111");
+    })
+    p1.then((value)=>{
+        console.log("22222");
+    })
+    console.log(33333);
+</script>
+<!--<script>
+    let p1=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("p1 success")
+        },1000)
+    })
+    let p2 = Promise.reject('p2 reject');
+    let p3 = Promise.resolve('p3 Oh Yeah');
+    let result = Promise.race([p1, p2, p3]);
+
+    console.log(result);
+</script>-->
+<!--<script>
+   // const p=Promise.resolve("no Promise")
+    /*const p=Promise.resolve(new Promise((resolve,reject)=>{
+        reject("err Promise")
+        resolve("success promsie")
+    }))*/
+   const p=Promise.reject(new Promise((resolve,reject)=>{
+       resolve("success promsie")
+   }))
+    console.log(p);
+</script>-->
+<!--<script>
+    //实例化对象
+    let p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("err");
+            //resolve('OK');
+        }, 1000);
+    });
+
+    //值传递
+    p.then((value) => {
+        console.log(11111);
+    }).then(value => {
+        console.log(222);
+    }).then(value => {
+        console.log(333);
+    }).catch(reason => {
+        console.warn(reason);
+    });
+
+
+</script>-->
+<!--<script>
     const p = new Promise((resolve, reject) => {
         setTimeout(() => {
             //  resolve("OK");
@@ -17,10 +72,17 @@
         //reject("err");
         //throw "错误了"
     });
-    var res2 = p.catch((reason) => {
+    p.then((value)=>{
+        console.log(1111);
+    }).then(value => {
+        console.log(22222);
+    }).catch((reason)=>{
         console.log(reason);
-    });
-    console.log(res2);
+    })
+   /* var res2 = p.catch((reason) => {
+        console.log(reason);
+    });*/
+   // console.log(res2);
     /*var res= p.then(value => {
         console.log(value);
          /!*return "no promise"*!/
@@ -45,6 +107,6 @@
       alert(reason)
     });*/
     // console.log(p);
-</script>
+</script>-->
 </body>
 </html>

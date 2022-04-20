@@ -80,3 +80,15 @@ Promise是JS 中进行异步编程的新解决方案
 #### 7.中断promise 链?
      当使用promise 的then链式调用时，在中间中断，不再调用后面的回调函数
      办法:在回调函数中返回一个pendding状态的promise对象
+## async 函数
+    1.函数的返回值为 promise 对象
+    2. promise 对象的结果由 async 函数执行的返回值决定
+    
+##  await 表达式
+    1. await 右侧的表达式一般为 promise 对象, 但也可以是其它的值
+    2. 如果表达式是 promise 对象, await 返回的是 promise 成功的值
+    3. 如果表达式是其它值, 直接将此值作为 await 的返回值
+## 注意
+    1. await 必须写在 async 函数中, 但 async 函数中可以没有 await
+    2. 如果 await 的 promise 失败了, 就会抛出异常, 需要通过 try...catch 捕获处理
+    
